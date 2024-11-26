@@ -1,0 +1,25 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Flutter
+.pub/
+build/
+ios/Flutter/Flutter.podspec
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE or editor files (if you don't want to push them)
+.idea/
+.vscode/
+*.swp
+
+# Dart/Flutter configuration
+pubspec.yaml
+
+# Other sensitive or unnecessary files
+.env

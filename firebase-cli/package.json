@@ -1,0 +1,14 @@
+{
+  "name": "firebase-cli",
+  "version": "1.0.0",
+  "author": "ChamikaCS",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "cli": "node cli.js"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "firebase-admin": "^13.0.1"
+  }
+}
