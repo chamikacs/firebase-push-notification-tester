@@ -2,9 +2,6 @@
 
 I apologize for the confusion in the previous versions. Here's the corrected `README.md` file, especially with clear and accurate installation steps for the API and Flutter setup:
 
-```markdown
-# Push Notification Project
-
 This repository contains:
 - A **Flutter** project for testing push notifications on Android.
 - A **Node.js API** for handling and sending push notifications to Android devices.
