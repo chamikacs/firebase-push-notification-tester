@@ -1,36 +1,34 @@
-import { initializeApp, applicationDefault } from "firebase-admin/app";
-import { getMessaging } from "firebase-admin/messaging";
-import express, { json } from "express";
-import admin from "firebase-admin"
-// import serviceAccount from "./service-account-key.json"
+const express = require("express");
+const admin = require("firebase-admin");
+const path = require("path");
 
-process.env.GOOGLE_APPLICATION_CREDENTIALS;
+// Resolve the path to the service account key file
+const serviceAccountPath = path.join(__dirname, "./service-account-key.json");
+
+// Initialize Firebase Admin SDK
+admin.initializeApp({
+  credential: admin.credential.cert(require(serviceAccountPath)),
+});
 
 const app = express();
 app.use(express.json());
-
-initializeApp({
-  credential: applicationDefault(),
-//   projectId: 'potion-for-creators'
-});
 
 app.post("/send", function (req, res) {
   const token = req.body.token;
   const message = {
     notification: {
-      title: "Notifiation",
+      title: "Notification",
       body: "This is the Body",
     },
     token: [token],
   };
 
-  admin.getMessaging.sendMulticast()
-
-  getMessaging()
+  admin
+    .messaging()
     .send(message)
     .then((response) => {
       res.status(200).json({
-        message: "Successfully sent the msg",
+        message: "Successfully sent the message",
         token: token,
       });
       console.log("Successfully sent the message: ", response);
